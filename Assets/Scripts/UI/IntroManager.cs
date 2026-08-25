@@ -20,11 +20,11 @@ public class IntroManager : MonoBehaviour
     [SerializeField] private CanvasGroup imageCanvasGroup;
     [SerializeField] private TypewriterText typewriter;
 
-    [Header("‰‰oİ’è")]
+    [Header("Presentation Settings")]
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private float delayBetweenPages = 0.3f;
 
-    [Header("Š®—¹")]
+    [Header("Over")]
     [SerializeField] private string nextSceneName = "";
 
     private bool _waitingForClick;
