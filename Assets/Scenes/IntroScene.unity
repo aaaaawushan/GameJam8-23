@@ -236,14 +236,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IntroManager
   pages:
-  - image: {fileID: -8626561195316245140, guid: a6442fc63caa9d346b40cc60fd05c73d, type: 3}
-    text: 123
-  - image: {fileID: -6608645584165448405, guid: 6f76ece04fa6f7a448a8fdeb5db3d6ac, type: 3}
-    text: 456
-  - image: {fileID: -3661250519143584574, guid: 64a90e011ed2d1841a56b78f1ada8d16, type: 3}
-    text: 789
-  - image: {fileID: 8943976511541981322, guid: b38b046c97185a045b0433b8cdb35fc3, type: 3}
-    text: 1011
+  - image: {fileID: 6268606746825039309, guid: 852a98c3276004bb7a69f053689c59d1, type: 3}
+    text: 
+  - image: {fileID: 6782134719153662387, guid: a1ef6930eeb374b1cbe203ccff39d102, type: 3}
+    text: 
+  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+    text: "I really don\u2019t want to go outside.\r\nBut I have to."
+  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+    text: I wish everyone would just disappear.
+  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+    text: "I don\u2019t want to see anyone.\r\nI can\u2019t trust anyone.\r\nEvery
+      movement. Every word. Every little gesture.\r\nEverything feels ten times louder
+      than it should."
+  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+    text: 'Fat pig.
+
+      Loser.
+
+      Useless.
+
+      A waste of space.
+
+      You
+      stink.
+
+      Disgusting.'
+  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+    text: 'When was the last time she showered?
+
+      Lazy ass.
+
+      Ugly freak.'
+  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+    text: "I don\u2019t want to hear those voices anymore."
+  - image: {fileID: 3533361599112880600, guid: f7f7db85995d54cfc8b4cf3364a84ba8, type: 3}
+    text: 
   displayImage: {fileID: 424019544}
   imageCanvasGroup: {fileID: 424019541}
   typewriter: {fileID: 2076494324}
@@ -349,6 +376,7 @@ GameObject:
   - component: {fileID: 994291656}
   - component: {fileID: 994291655}
   - component: {fileID: 994291654}
+  - component: {fileID: 994291657}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -430,6 +458,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &994291657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994291653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &1024829085
 GameObject:
   m_ObjectHideFlags: 0
