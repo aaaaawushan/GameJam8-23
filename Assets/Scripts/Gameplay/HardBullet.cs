@@ -6,8 +6,10 @@ public class HardBullet : BulletBase
     {
         hitCount--;
         if (hitCount <= 0)
-            Destroy(gameObject);
+        {
+            StartCoroutine(ShakeAndDestroy());
+        }
     }
 
-   
+
 }

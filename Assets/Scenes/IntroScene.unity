@@ -244,11 +244,14 @@ MonoBehaviour:
     text: 789
   - image: {fileID: 8943976511541981322, guid: b38b046c97185a045b0433b8cdb35fc3, type: 3}
     text: 1011
+  - image: {fileID: 8943976511541981322, guid: b38b046c97185a045b0433b8cdb35fc3, type: 3}
+    text: 11111111111111111111111
   displayImage: {fileID: 424019544}
   imageCanvasGroup: {fileID: 424019541}
   typewriter: {fileID: 2076494324}
   fadeDuration: 1
   delayBetweenPages: 0.3
+  gameInstructionTime: 3
   nextSceneName: MainScene
 --- !u!1 &424019540
 GameObject:

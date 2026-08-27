@@ -9,7 +9,7 @@ public class IntroManager : MonoBehaviour
     public class IntroPage
     {
         public Sprite image;
-        [TextArea(1, 3)]
+        [TextArea(1, 6)]
         public string text;
     }
     [Header("Page Date")]
@@ -23,6 +23,8 @@ public class IntroManager : MonoBehaviour
     [Header("Presentation Settings")]
     [SerializeField] private float fadeDuration = 1.0f;
     [SerializeField] private float delayBetweenPages = 0.3f;
+    [SerializeField] private float gameInstructionTime = 3f;
+    private bool isLastPage;
 
     [Header("Over")]
     [SerializeField] private string nextSceneName = "";
@@ -39,6 +41,8 @@ public class IntroManager : MonoBehaviour
     {
         var mouse = Mouse.current;
         if (mouse == null || !mouse.leftButton.wasPressedThisFrame) return;
+        if (isLastPage) return;
+        
         if (typewriter.isTyping)
         {
             typewriter.Skip();
@@ -64,10 +68,21 @@ public class IntroManager : MonoBehaviour
             }
             typewriter.Play(page.text);
 
-            _waitingForClick = true;
-            _clicked = false;
-            yield return new WaitUntil(() => _clicked);
-            _waitingForClick = false;
+            if (i == pages.Length-1)
+            {
+                isLastPage = true;
+                _waitingForClick = false;
+                yield return new WaitForSeconds(gameInstructionTime);
+            }
+            else
+            {
+                _waitingForClick = true;
+                _clicked = false;
+                yield return new WaitUntil(() => _clicked);
+                _waitingForClick = false;
+
+            }
+
 
             yield return StartCoroutine(Fade(1f, 0f));
             typewriter.Stop();
@@ -75,6 +90,7 @@ public class IntroManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(delayBetweenPages);
             }
+
         }
         OnIntroComplete();
     }
