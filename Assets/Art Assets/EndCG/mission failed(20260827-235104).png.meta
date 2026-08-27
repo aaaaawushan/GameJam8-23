@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 91dc675a2091c4e679f44beec2adacfb
+guid: 47f4ae142493c421bb32308ccbe34e31
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8969899799059795323
-    second: "\u672A\u547D\u540D 27_0"
+      213: 4965743732015284899
+    second: mission failed(20260827-235104)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u672A\u547D\u540D 27_0"
+      name: mission failed(20260827-235104)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1168
-        height: 524
+        width: 640
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 582713648a3848380800000000000000
-      internalID: -8969899799059795323
+      spriteID: 3a2c4685d9dd9e440800000000000000
+      internalID: 4965743732015284899
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u672A\u547D\u540D 27_0": -8969899799059795323
+      mission failed(20260827-235104)_0: 4965743732015284899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

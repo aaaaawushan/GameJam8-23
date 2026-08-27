@@ -240,15 +240,15 @@ MonoBehaviour:
     text: 
   - image: {fileID: 6782134719153662387, guid: a1ef6930eeb374b1cbe203ccff39d102, type: 3}
     text: 
-  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
     text: "I really don\u2019t want to go outside.\r\nBut I have to."
-  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
     text: I wish everyone would just disappear.
-  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
     text: "I don\u2019t want to see anyone.\r\nI can\u2019t trust anyone.\r\nEvery
       movement. Every word. Every little gesture.\r\nEverything feels ten times louder
       than it should."
-  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
     text: 'Fat pig.
 
       Loser.
@@ -261,15 +261,15 @@ MonoBehaviour:
       stink.
 
       Disgusting.'
-  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
     text: 'When was the last time she showered?
 
       Lazy ass.
 
       Ugly freak.'
-  - image: {fileID: -8969899799059795323, guid: 91dc675a2091c4e679f44beec2adacfb, type: 3}
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
     text: "I don\u2019t want to hear those voices anymore."
-  - image: {fileID: 3533361599112880600, guid: f7f7db85995d54cfc8b4cf3364a84ba8, type: 3}
+  - image: {fileID: -3244613740898623679, guid: 020232432430c4711ba92b97ea0e3247, type: 3}
     text: 
   displayImage: {fileID: 424019544}
   imageCanvasGroup: {fileID: 424019541}
