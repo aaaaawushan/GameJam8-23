@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - shubiao
-  - 
+  - lizi
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Diagloue
     uniqueID: 906732819
+    locked: 0
+  - name: Effect
+    uniqueID: 4067255077
     locked: 0
   m_RenderingLayers:
   - Default

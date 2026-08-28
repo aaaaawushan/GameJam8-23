@@ -15,6 +15,7 @@ public abstract class BulletBase : MonoBehaviour
         float leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero).x;
         if (transform.position.x < leftEdge)
         {
+            FindFirstObjectByType<DamageBase>().TakeDamage();
             Destroy(gameObject);
         }
     }

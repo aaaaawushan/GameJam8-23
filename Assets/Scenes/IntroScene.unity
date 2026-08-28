@@ -276,6 +276,7 @@ MonoBehaviour:
   typewriter: {fileID: 2076494324}
   fadeDuration: 1
   delayBetweenPages: 0.3
+  gameInstructionTime: 3
   nextSceneName: MainScene
 --- !u!1 &424019540
 GameObject:
@@ -332,8 +333,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 122}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 0.5695, y: 122}
+  m_SizeDelta: {x: 584, y: 262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &424019544
 MonoBehaviour:
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 6268606746825039309, guid: 852a98c3276004bb7a69f053689c59d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
