@@ -273,7 +273,7 @@ MonoBehaviour:
   imageCanvasGroup: {fileID: 424019541}
   typewriter: {fileID: 2076494324}
   fadeDuration: 1
-  delayBetweenPages: 0.3
+  delayBetweenPages: 0.1
   gameInstructionTime: 3
   nextSceneName: InstructionSceneA
 --- !u!1 &424019540

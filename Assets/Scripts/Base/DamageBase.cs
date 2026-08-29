@@ -7,6 +7,5 @@ public class DamageBase : MonoBehaviour
     {
         hp--;
         CameraShake.Instance.Shake();
-
     }
 }
