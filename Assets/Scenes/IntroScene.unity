@@ -273,7 +273,7 @@ MonoBehaviour:
   imageCanvasGroup: {fileID: 424019541}
   typewriter: {fileID: 2076494324}
   fadeDuration: 1
-  delayBetweenPages: 0.1
+  delayBetweenPages: 0.3
   gameInstructionTime: 3
   nextSceneName: InstructionSceneA
 --- !u!1 &424019540
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef32a5616789d134aa68ed28dcdff350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TypewriterText
-  textSpeed: 0.3
+  textSpeed: 0.1
   targetText: {fileID: 2076494322}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

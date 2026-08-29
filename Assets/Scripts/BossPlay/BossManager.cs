@@ -22,7 +22,7 @@ public class BossManager : MonoBehaviour
 
     [Header("Scene")]
     [SerializeField] private string nextSceneName;
-    [SerializeField] private string failSceneName;
+    [SerializeField] private GameObject badEndPanel;
     private bool isBossDefeated = false;
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
@@ -132,7 +132,16 @@ public class BossManager : MonoBehaviour
 
         color.a = 1f;
         fadeImage.color = color;
-        SceneManager.LoadScene(isBossDefeated ? nextSceneName : failSceneName);
+
+        if (isBossDefeated)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            AudioManager.Instance.StopBGM();
+            badEndPanel.SetActive(true);
+        }
     }
 
     void DestroyGroup(GameObject[] group)
