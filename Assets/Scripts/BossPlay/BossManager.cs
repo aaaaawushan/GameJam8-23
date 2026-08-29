@@ -61,6 +61,7 @@ public class BossManager : MonoBehaviour
         StartCoroutine(SpawnLoop());
         StartCoroutine(OrbitBulletTimeline());
         StartCoroutine(BreathLoop());
+        AudioManager.Instance.OnBGMFinished = OnMusicEnd;
     }
     IEnumerator BreathLoop()
     {
@@ -159,31 +160,75 @@ public class BossManager : MonoBehaviour
 
     IEnumerator OrbitBulletTimeline()
     {
+        
         yield return new WaitForSeconds(30f);
         phase1TimePassed = true;
         CheckPhase();
 
+        float waitTimer = 0f;
+        float waitLimit = 2f; 
+        while (!phase1Cleared)
+        {
+            waitTimer += Time.deltaTime;
+            if (waitTimer >= waitLimit)
+            {
+                Fail();
+                yield break;
+            }
+            yield return null;
+        }
+
+        
         yield return new WaitForSeconds(30f);
         phase2TimePassed = true;
         CheckPhase();
 
-        yield return new WaitForSeconds(16f);
+        waitTimer = 0f;
+        while (!phase2Cleared)
+        {
+            waitTimer += Time.deltaTime;
+            if (waitTimer >= waitLimit)
+            {
+                Fail();
+                yield break;
+            }
+            yield return null;
+        }
+
+       
+        yield return new WaitForSeconds(15f);
         phase3TimePassed = true;
         CheckPhase();
-        yield return new WaitForSeconds(3f);
 
-
-        if (phase1Cleared && phase2Cleared && phase3Cleared)
+        waitTimer = 0f;
+        while (!phase3Cleared)
         {
-            isBossDefeated = true; 
-            isSpawning = false;
-            StartCoroutine(FadeEffect());
+            waitTimer += Time.deltaTime;
+            if (waitTimer >= waitLimit)
+            {
+                Fail();
+                yield break;
+            }
+            yield return null;
         }
-        else
+
+       
+        isBossDefeated = true;
+        isSpawning = false;
+        StartCoroutine(FadeEffect());
+    }
+
+    void Fail()
+    {
+        isBossDefeated = false;
+        isSpawning = false;
+        StartCoroutine(FadeEffect());
+    }
+    void OnMusicEnd()
+    {
+        if (!isBossDefeated)
         {
-            isBossDefeated = false;
-            isSpawning = false;
-            StartCoroutine(FadeEffect());
+            Fail();
         }
     }
     public void OnBulletDestroyed()
