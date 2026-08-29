@@ -11,4 +11,12 @@ public class SceneBGM : MonoBehaviour
             AudioManager.Instance.PlayBGM(sceneAudioSource);
         }
     }
+
+    void OnDestroy()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopBGM();
+        }
+    }
 }
