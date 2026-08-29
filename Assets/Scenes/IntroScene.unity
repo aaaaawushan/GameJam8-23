@@ -270,14 +270,14 @@ MonoBehaviour:
   - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
     text: "I don\u2019t want to hear those voices anymore."
   - image: {fileID: -3244613740898623679, guid: 020232432430c4711ba92b97ea0e3247, type: 3}
-    text: 
+    text: "I don\u2019t want to hear those voices anymore.\n"
   displayImage: {fileID: 424019544}
   imageCanvasGroup: {fileID: 424019541}
   typewriter: {fileID: 2076494324}
   fadeDuration: 1
   delayBetweenPages: 0.3
   gameInstructionTime: 3
-  nextSceneName: MainScene
+  nextSceneName: InstructionSceneA
 --- !u!1 &424019540
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,8 +693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -136, y: -130}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 60.8907, y: -193.2327}
+  m_SizeDelta: {x: 694.1517, y: 312.2985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076494322
 MonoBehaviour:
@@ -718,8 +718,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9b10c3e24640d6e4a8730d869ae6df9a, type: 2}
+  m_sharedMaterial: {fileID: -507735288340665346, guid: 9b10c3e24640d6e4a8730d869ae6df9a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -782,7 +782,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -11.829407, y: 0, z: -277.9912, w: -111.393616}
+  m_margin: {x: -0.11956787, y: 0, z: -1.6410522, w: 1.0200043}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -57,18 +57,25 @@ public class IntroManager : MonoBehaviour
         for (int i = 0; i < pages.Length; i++)
         {
             var page = pages[i];
-            displayImage.sprite = page.image;
+            bool sameAsPrevious = displayImage.sprite == page.image;
+
+            if (!sameAsPrevious)
+            {
+                displayImage.sprite = page.image;
+            }
+
             if (i == 0)
             {
                 imageCanvasGroup.alpha = 1;
             }
-            else
+            else if (!sameAsPrevious)
             {
                 yield return StartCoroutine(Fade(0f, 1f));
             }
+
             typewriter.Play(page.text);
 
-            if (i == pages.Length-1)
+            if (i == pages.Length - 1)
             {
                 isLastPage = true;
                 _waitingForClick = false;
@@ -80,17 +87,19 @@ public class IntroManager : MonoBehaviour
                 _clicked = false;
                 yield return new WaitUntil(() => _clicked);
                 _waitingForClick = false;
-
             }
 
+            bool sameAsNext = i < pages.Length - 1 && pages[i + 1].image == page.image;
+            if (!sameAsNext)
+            {
+                yield return StartCoroutine(Fade(1f, 0f));
+            }
 
-            yield return StartCoroutine(Fade(1f, 0f));
             typewriter.Stop();
             if (i < pages.Length - 1)
             {
                 yield return new WaitForSeconds(delayBetweenPages);
             }
-
         }
         OnIntroComplete();
     }
