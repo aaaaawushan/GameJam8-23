@@ -1,14 +1,27 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public abstract class BulletBase : MonoBehaviour
 {
 
     public float speed;
     public int hitCount;
+    [SerializeField] private string[] dialogueTexts;
 
     private BulletSpawner spawner;
     private Transform spawnPoint;
+    private TextMeshPro textMesh;
+
+    void Start()
+    {
+        textMesh = GetComponentInChildren<TextMeshPro>();
+        if (textMesh != null && dialogueTexts != null && dialogueTexts.Length > 0)
+        {
+            textMesh.text = dialogueTexts[Random.Range(0, dialogueTexts.Length)];
+        }
+    }
+
     void Update()
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
