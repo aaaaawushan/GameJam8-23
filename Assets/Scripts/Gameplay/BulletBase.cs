@@ -37,15 +37,31 @@ public abstract class BulletBase : MonoBehaviour
     public IEnumerator ShakeAndDestroy()
     {
         Vector3 originalPos = transform.position;
-        float duration = 0.15f;
-        float magnitude = 0.1f;
+        Vector3 originalScale = transform.localScale;
+        float duration = 0.4f;    
+        float magnitude = 0.15f; 
         float timer = 0f;
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Color color = sr.color;
 
         while (timer < duration)
         {
-            float offsetX = Random.Range(-magnitude, magnitude);
-            float offsetY = Random.Range(-magnitude, magnitude);
+            float progress = timer / duration; // 0 ¨ 1
+
+           
+            float shake = magnitude * (1f - progress);
+            float offsetX = Random.Range(-shake, shake);
+            float offsetY = Random.Range(-shake, shake);
             transform.position = originalPos + new Vector3(offsetX, offsetY, 0);
+
+           
+            transform.localScale = originalScale * (1f - progress);
+
+           
+            color.a = 1f - progress;
+            sr.color = color;
+
             timer += Time.deltaTime;
             yield return null;
         }

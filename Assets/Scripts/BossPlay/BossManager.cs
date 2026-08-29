@@ -9,7 +9,10 @@ public class BossManager : MonoBehaviour
 
     [Header("Boss Pic")]
     [SerializeField] private SpriteRenderer bossRenderer;
-    [SerializeField] private Sprite normalSprite;
+    [SerializeField] private Sprite breathSprite1;
+    [SerializeField] private Sprite breathSprite2;
+    [SerializeField] private float breathInterval = 0.5f;
+    private bool isHurt = false;
     [SerializeField] private Sprite hurtSprite1;
     [SerializeField] private Sprite hurtSprite2;
     [SerializeField] private float hurtDisplayTime = 0.3f;
@@ -57,8 +60,28 @@ public class BossManager : MonoBehaviour
     {
         StartCoroutine(SpawnLoop());
         StartCoroutine(OrbitBulletTimeline());
+        StartCoroutine(BreathLoop());
     }
-
+    IEnumerator BreathLoop()
+    {
+        while (true)
+        {
+            if (!isHurt)
+            {
+                bossRenderer.sprite = breathSprite1;
+                yield return new WaitForSeconds(breathInterval);
+                if (!isHurt)
+                {
+                    bossRenderer.sprite = breathSprite2;
+                    yield return new WaitForSeconds(breathInterval);
+                }
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+    }
     IEnumerator SpawnLoop()
     {
         while (isSpawning && hp > 0)
@@ -88,11 +111,12 @@ public class BossManager : MonoBehaviour
 
     IEnumerator HurtEffect()
     {
+        isHurt = true;
         bossRenderer.sprite = hurtSprite1;
         yield return new WaitForSeconds(hurtDisplayTime);
         bossRenderer.sprite = hurtSprite2;
         yield return new WaitForSeconds(hurtDisplayTime);
-        bossRenderer.sprite = normalSprite;
+        isHurt = false;
     }
     IEnumerator FadeEffect()
     {

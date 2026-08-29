@@ -5,8 +5,10 @@ public class BossBulletBase : MonoBehaviour
 {
     [SerializeField] protected int hitCount = 1;
     [SerializeField] protected float lifetime = 2f;
-    [SerializeField] protected float flickerSpeed = 5f;
     [SerializeField] protected GameObject destroyEffect;
+
+    [SerializeField] private TMPro.TextMeshProUGUI text;
+
 
     protected SpriteRenderer sr;
     private float timer;
@@ -19,20 +21,37 @@ public class BossBulletBase : MonoBehaviour
 
     void Update()
     {
-      
-        float alpha = Mathf.Abs(Mathf.Sin(Time.time * flickerSpeed));
+        float halfLife = lifetime / 2f;
+        float elapsed = lifetime - timer;
+
+        
+        float alpha;
+        if (elapsed < halfLife)
+        {
+            alpha = elapsed / halfLife;         // 0 ¨ 1
+        }
+        else
+        {
+            alpha = timer / halfLife;           // 1 ¨ 0
+        }
+
         Color c = sr.color;
         c.a = alpha;
         sr.color = c;
 
-        
+        if (text != null)
+        {
+            Color tc = text.color;
+            tc.a = alpha;
+            text.color = tc;
+        }
+
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
             Destroy(gameObject);
         }
 
-        
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Vector2 worldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
