@@ -267,8 +267,6 @@ MonoBehaviour:
       Lazy ass.
 
       Ugly freak.'
-  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
-    text: "I don\u2019t want to hear those voices anymore."
   - image: {fileID: -3244613740898623679, guid: 020232432430c4711ba92b97ea0e3247, type: 3}
     text: "I don\u2019t want to hear those voices anymore.\n"
   displayImage: {fileID: 424019544}

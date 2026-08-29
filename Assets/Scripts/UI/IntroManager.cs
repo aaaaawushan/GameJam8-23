@@ -42,7 +42,7 @@ public class IntroManager : MonoBehaviour
         var mouse = Mouse.current;
         if (mouse == null || !mouse.leftButton.wasPressedThisFrame) return;
         if (isLastPage) return;
-        
+
         if (typewriter.isTyping)
         {
             typewriter.Skip();
@@ -75,19 +75,12 @@ public class IntroManager : MonoBehaviour
 
             typewriter.Play(page.text);
 
-            if (i == pages.Length - 1)
-            {
-                isLastPage = true;
-                _waitingForClick = false;
-                yield return new WaitForSeconds(gameInstructionTime);
-            }
-            else
-            {
-                _waitingForClick = true;
-                _clicked = false;
-                yield return new WaitUntil(() => _clicked);
-                _waitingForClick = false;
-            }
+
+            _waitingForClick = true;
+            _clicked = false;
+            yield return new WaitUntil(() => _clicked);
+            _waitingForClick = false;
+
 
             bool sameAsNext = i < pages.Length - 1 && pages[i + 1].image == page.image;
             if (!sameAsNext)
