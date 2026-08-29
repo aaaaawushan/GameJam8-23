@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource bgmSource;
     public AudioSource sfxSource;
     [Range(0f, 1f)] public float masterVolume = 1f;
+    public System.Action OnBGMFinished;
 
     private float bgmBaseVolume = 1f;
     private float sfxBaseVolume = 1f;
@@ -43,13 +45,36 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM(AudioSource source)
     {
         if (source == null || source.clip == null) return;
-        if (bgmSource.clip == source.clip) return;
 
         bgmSource.clip = source.clip;
         bgmSource.loop = source.loop;
         bgmBaseVolume = source.volume;
         bgmSource.volume = bgmBaseVolume * masterVolume;
         bgmSource.Play();
+
+        StopAllCoroutines();
+        if (!bgmSource.loop)
+        {
+            StartCoroutine(WaitForBGMEnd());
+        }
+    }
+
+    public void StopBGM()
+    {
+        if (bgmSource != null)
+        {
+            bgmSource.Stop();
+        }
+    }
+
+    private IEnumerator WaitForBGMEnd()
+    {
+        while (bgmSource != null && bgmSource.isPlaying)
+        {
+            yield return null;
+        }
+
+        OnBGMFinished?.Invoke();
     }
 
     public void SetMasterVolume(float value)
