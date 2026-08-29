@@ -27,6 +27,7 @@ public class BulletSpawner : MonoBehaviour
                 if (bullet != null)
                 {
                     bullet.OnHit();
+                    AudioManager.Instance?.PlayHitSFX();
                 }
             }
         }
