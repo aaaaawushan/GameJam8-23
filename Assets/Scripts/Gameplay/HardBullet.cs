@@ -17,7 +17,7 @@ public class HardBullet : BulletBase
     public override void OnHit()
     {
         hitCount--;
-        if (hitCount == 1)
+        if (hitCount <= 2)
         {
             sr.sprite = lastHitPic;
             Instantiate(hitEffect, transform.position, Quaternion.identity);

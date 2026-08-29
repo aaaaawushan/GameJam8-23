@@ -59,6 +59,12 @@ TextureImporter:
   - first:
       213: -903432579089451134
     second: F1_18
+  - first:
+      213: -688537296797684564
+    second: F1_19
+  - first:
+      213: -8942780419160229535
+    second: F1_20
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -179,7 +185,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 73f8f00cf642d2047afc9801b166f405
+    spriteID: ccc191c512e1bf84e826b24c92f24056
     internalID: 0
     vertices: []
     indices: 
