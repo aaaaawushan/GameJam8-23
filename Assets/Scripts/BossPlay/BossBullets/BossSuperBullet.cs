@@ -26,6 +26,7 @@ public class BossSuperBullet : BossBulletBase
         {
             if (destroyEffect != null)
                 Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            BossManager.Instance.OnBulletDestroyed();
             Destroy(gameObject);
         }
     }

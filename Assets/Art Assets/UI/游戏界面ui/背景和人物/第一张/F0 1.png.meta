@@ -1,40 +1,52 @@
 fileFormatVersion: 2
-guid: 19db36b4b9c3f744eae634bce6a46084
+guid: 7c8288826feada641921d667a07a6da5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6660573835324607807
-    second: F2_0
+      213: 4961290715741683230
+    second: F0 1_0
   - first:
-      213: -302054670639148837
-    second: F2_1
+      213: 5641360465929446057
+    second: F0 1_1
   - first:
-      213: 7875151039126712306
-    second: F2_2
+      213: -7390319264602509576
+    second: F0 1_2
   - first:
-      213: 5578484408485561456
-    second: F2_3
+      213: 8412927208047380011
+    second: F0 1_3
   - first:
-      213: 7861286135056665245
-    second: F2_4
+      213: 5291450094846961057
+    second: F0 1_4
   - first:
-      213: -8745714962444070083
-    second: F2_5
+      213: -162277585014124904
+    second: F0 1_5
   - first:
-      213: -3010719258532585810
-    second: F2_6
+      213: -1499126447690563613
+    second: F0 1_6
   - first:
-      213: -7959142993359658923
-    second: F2_7
+      213: 7167647130410745034
+    second: F0 1_7
   - first:
-      213: -3411790768917466073
-    second: F2_8
+      213: 9022221919751917246
+    second: F0 1_8
   - first:
-      213: 381729363228127690
-    second: F2_9
+      213: 5428374210744974936
+    second: F0 1_9
   - first:
-      213: 4322257954520389672
-    second: F2_10
+      213: 3691045073696309278
+    second: F0 1_10
+  - first:
+      213: 3509866625262903371
+    second: F0 1_11
+  - first:
+      213: -444662368055129767
+    second: F0 1_12
+  - first:
+      213: -5484989812402004159
+    second: F0 1_13
+  - first:
+      213: 7372268808149116677
+    second: F0 1_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -130,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: F2_0
+      name: F0 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,8 +157,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c23731d263e093a0800000000000000
-      internalID: -6660573835324607807
+      spriteID: e1ef933be9b0ad440800000000000000
+      internalID: 4961290715741683230
       vertices: []
       indices: 
       edges: []
@@ -155,7 +167,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3be4fcb99281f9948b794ac9fa2b09ee
+    spriteID: e185b5117efc5ab468c839613a0f1de7
     internalID: 0
     vertices: []
     indices: 
@@ -167,7 +179,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":3840.0,"y":720.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      F2_0: -6660573835324607807
+      F0 1_0: 4961290715741683230
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

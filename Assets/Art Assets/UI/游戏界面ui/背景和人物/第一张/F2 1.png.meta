@@ -1,40 +1,10 @@
 fileFormatVersion: 2
-guid: 19db36b4b9c3f744eae634bce6a46084
+guid: 9d68abbc18a633f4fae2050ec475efa7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6660573835324607807
-    second: F2_0
-  - first:
-      213: -302054670639148837
-    second: F2_1
-  - first:
-      213: 7875151039126712306
-    second: F2_2
-  - first:
-      213: 5578484408485561456
-    second: F2_3
-  - first:
-      213: 7861286135056665245
-    second: F2_4
-  - first:
-      213: -8745714962444070083
-    second: F2_5
-  - first:
-      213: -3010719258532585810
-    second: F2_6
-  - first:
-      213: -7959142993359658923
-    second: F2_7
-  - first:
-      213: -3411790768917466073
-    second: F2_8
-  - first:
-      213: 381729363228127690
-    second: F2_9
-  - first:
-      213: 4322257954520389672
-    second: F2_10
+      213: -4717222450106940602
+    second: F2 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -102,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: F2_0
+      name: F2 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,15 +108,15 @@ TextureImporter:
         width: 3840
         height: 720
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c23731d263e093a0800000000000000
-      internalID: -6660573835324607807
+      spriteID: 643c0eeac2f098eb0800000000000000
+      internalID: -4717222450106940602
       vertices: []
       indices: 
       edges: []
@@ -155,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3be4fcb99281f9948b794ac9fa2b09ee
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -163,11 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":3840.0,"y":720.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      F2_0: -6660573835324607807
+      F2 1_0: -4717222450106940602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

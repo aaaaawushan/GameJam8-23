@@ -39,6 +39,7 @@ public class MainDamage : DamageBase
 
             fullHPImage.SetActive(false);
             damagedImage.SetActive(false);
+            AudioManager.Instance.StopBGM();
             StartCoroutine(FadeEffect());
         }
     }

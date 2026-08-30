@@ -61,6 +61,7 @@ public class IntroManager : MonoBehaviour
         {
             var page = pages[i];
             bool sameAsPrevious = displayImage.sprite == page.image;
+            bool isLast = (i == pages.Length - 1);
 
             if (!sameAsPrevious)
             {
@@ -84,25 +85,28 @@ public class IntroManager : MonoBehaviour
             yield return new WaitUntil(() => _clicked);
             _waitingForClick = false;
 
-            bool sameAsNext = i < pages.Length - 1 && pages[i + 1].image == page.image;
+            bool sameAsNext = !isLast && pages[i + 1].image == page.image;
 
-            if (!sameAsNext)
+            if (sameAsNext)
             {
-                StartCoroutine(FadeText(1f, 0f));
-                yield return StartCoroutine(Fade(1f, 0f));
+              
+                yield return StartCoroutine(FadeText(1f, 0f));
             }
             else
             {
-                yield return StartCoroutine(FadeText(1f, 0f));
+               
+                StartCoroutine(FadeText(1f, 0f));
+                yield return StartCoroutine(Fade(1f, 0f));
             }
+
             typewriter.Stop();
 
-
-            if (i < pages.Length - 1)
+            if (!isLast)
             {
                 yield return new WaitForSeconds(delayBetweenPages);
             }
         }
+
         OnIntroComplete();
     }
     private IEnumerator FadeText(float from, float to)

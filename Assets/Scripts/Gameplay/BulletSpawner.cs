@@ -11,8 +11,8 @@ public class BulletSpawner : MonoBehaviour
     [Header("extra spawn")]
     [SerializeField] private Transform[] extraPoints1;  
     [SerializeField] private Transform[] extraPoints2;  
-    [SerializeField] private float unlockTime1 = 60f;
-    [SerializeField] private float unlockTime2 = 120f;
+    [SerializeField] private float unlockTime1 = 35f;
+    [SerializeField] private float unlockTime2 = 60f;
 
     private List<Transform> availablePos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,6 +40,7 @@ public class BulletSpawner : MonoBehaviour
 
     void Update()
     {
+        if (MainPause.Instance.IsPaused) return;
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());

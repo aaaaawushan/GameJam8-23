@@ -28,11 +28,11 @@ public class BossBulletBase : MonoBehaviour
         float alpha;
         if (elapsed < halfLife)
         {
-            alpha = elapsed / halfLife;         // 0 ¨ 1
+            alpha = elapsed / halfLife;        
         }
         else
         {
-            alpha = timer / halfLife;           // 1 ¨ 0
+            alpha = timer / halfLife;         
         }
 
         Color c = sr.color;

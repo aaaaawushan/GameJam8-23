@@ -51,6 +51,7 @@ public class BossManager : MonoBehaviour
     private bool phase1Cleared = false;
     private bool phase2Cleared = false;
     private bool phase3Cleared = false;
+    private bool isFading = false;
     void Awake()
     {
         Instance = this;
@@ -99,6 +100,7 @@ public class BossManager : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (isFading) return;
         hp--;
         StartCoroutine(HurtEffect());
 
@@ -121,6 +123,8 @@ public class BossManager : MonoBehaviour
     }
     IEnumerator FadeEffect()
     {
+        if (isFading) yield break;
+        isFading = true;
         fadeImage.gameObject.SetActive(true);
         Color color = fadeImage.color;
         while (elapsed < fadeDuration)
@@ -220,6 +224,7 @@ public class BossManager : MonoBehaviour
 
     void Fail()
     {
+        if (isFading) return;
         isBossDefeated = false;
         isSpawning = false;
         StartCoroutine(FadeEffect());
@@ -239,6 +244,7 @@ public class BossManager : MonoBehaviour
 
     void CheckPhase()
     {
+        Debug.Log($"CheckPhase: kills={currentKills}, p1={phase1Cleared}, p2={phase2Cleared}, p3={phase3Cleared}, p3time={phase3TimePassed}");
         if (!phase1Cleared && phase1TimePassed && currentKills >= requiredKills)
         {
             phase1Cleared = true;

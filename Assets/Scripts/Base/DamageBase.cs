@@ -1,7 +1,7 @@
 using UnityEngine;
 public class DamageBase : MonoBehaviour
 {
-    [SerializeField] protected int hp;
+    public  int hp;
 
     public virtual void TakeDamage()
     {

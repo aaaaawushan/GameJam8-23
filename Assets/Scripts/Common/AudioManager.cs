@@ -69,14 +69,24 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator WaitForBGMEnd()
     {
-        while (bgmSource != null && bgmSource.isPlaying)
+        if (bgmSource == null || bgmSource.clip == null) yield break;
+
+        float clipLength = bgmSource.clip.length;
+
+        while (bgmSource != null && bgmSource.time < clipLength - 0.05f)
         {
+            
+            if (!bgmSource.isPlaying && bgmSource.time > 0f)
+            {
+                
+                yield return null;
+                continue;
+            }
             yield return null;
         }
 
         OnBGMFinished?.Invoke();
     }
-
     public void SetMasterVolume(float value)
     {
         masterVolume = value;

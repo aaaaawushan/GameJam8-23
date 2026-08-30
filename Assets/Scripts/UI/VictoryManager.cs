@@ -27,11 +27,14 @@ public class VictoryManager : MonoBehaviour
 
     private void OnVictory()
     {
+        if (MainPause.Instance.IsPaused) return;
+        var damage = FindAnyObjectByType<MainDamage>();
+        if (damage != null && damage.hp <= 0) return;
         ClearAllBullets();
 
         if (playerAnimator != null)
         {
-            playerAnimator.SetTrigger("isSurvived");
+            playerAnimator.SetBool("isSurvived", true);
             StartCoroutine(WaitForSurviveAnimation());
         }
         else
@@ -78,15 +81,13 @@ public class VictoryManager : MonoBehaviour
 
     private IEnumerator WaitForSurviveAnimation()
     {
-        yield return null;
-
-        AnimatorStateInfo stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
-        float waitTime = stateInfo.length;
-
-        if (waitTime > 0f)
+        while (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Panic"))
         {
-            yield return new WaitForSeconds(waitTime);
+            yield return null;
         }
+
+        float waitTime = playerAnimator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(waitTime);
 
         LoadVictoryScene();
     }
