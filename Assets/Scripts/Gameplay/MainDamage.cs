@@ -15,6 +15,7 @@ public class MainDamage : DamageBase
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private float elapsed = 0f;
     [SerializeField] private GameObject endPanel;
+   
     void Start()
     {
         SystemCursorManager.Instance.HideCursor();
@@ -22,6 +23,7 @@ public class MainDamage : DamageBase
         damagedImage.SetActive(false);
         endPanel.SetActive(false);
     }
+ 
     public override void TakeDamage()
     {
         base.TakeDamage();

@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4aa7f2b347d21459a64795c5dda5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalBullet
-  speed: 3.2
+  speed: 3.7
   hitCount: 1
   dialogueTexts:
   - Worthless.

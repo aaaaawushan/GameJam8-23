@@ -7,6 +7,9 @@ public class TypewriterText : MonoBehaviour
 
     [SerializeField] private float textSpeed;
     [SerializeField] private TextMeshProUGUI targetText;
+    private AudioClip currentVocalClip;
+    [SerializeField] private AudioSource vocalAudio;
+    [SerializeField] private AudioClip typingClip;
 
     private string _fullText;
     private bool _isTyping;
@@ -21,16 +24,21 @@ public class TypewriterText : MonoBehaviour
         for (int i = 0; i < _fullText.Length; i++)
         {
             targetText.text+= _fullText[i];
+            if (currentVocalClip != null && vocalAudio != null && i > 0)
+            {
+                vocalAudio.PlayOneShot(currentVocalClip);
+            }
             yield return new WaitForSeconds(textSpeed);
         }
         _isTyping = false;
     }
-    
+
     public void Play(string text)
     {
         Stop();
         _fullText = text;
         targetText.text = "";
+        currentVocalClip = typingClip;
         _typingCoroutine = StartCoroutine(TypeCoroutine());
     }
     public void Stop()

@@ -2523,7 +2523,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BossScene
+          m_StringArgument: TitleScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &812723350
@@ -5973,7 +5973,7 @@ MonoBehaviour:
   hurtSprite1: {fileID: -5405164439530168626, guid: f3978b7f85bab734fb464bae6a541737, type: 3}
   hurtSprite2: {fileID: -4201181039601258628, guid: d0a4ae50883a2cc43b7cdaa40891f365, type: 3}
   hurtDisplayTime: 0.3
-  hp: 3
+  hp: 5
   nextSceneName: CinematicScene
   badEndPanel: {fileID: 1948324868}
   fadeImage: {fileID: 1572312131}

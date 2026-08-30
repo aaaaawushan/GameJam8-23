@@ -16,6 +16,7 @@ public class HardBullet : BulletBase
 
     public override void OnHit()
     {
+        if (MainPause.Instance.IsPaused) return;
         hitCount--;
         if (hitCount <= 2)
         {

@@ -5,17 +5,25 @@ public class MainPause : MonoBehaviour
 {
     [SerializeField] private Button pauseButton;
     [SerializeField] private Sprite playIcon;   
-    [SerializeField] private Sprite pauseIcon; 
+    [SerializeField] private Sprite pauseIcon;
 
-    private bool isPaused = false;
+    public static MainPause Instance { get; private set; }
+
+    public bool IsPaused { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
 
     public void TogglePause()
     {
-        isPaused = !isPaused;
+        IsPaused = !IsPaused;
 
-        if (isPaused)
+        if (IsPaused)
         {
-            Time.timeScale = 0f;
+           Time.timeScale = 0f;
             pauseButton.image.sprite = playIcon; 
         }
         else

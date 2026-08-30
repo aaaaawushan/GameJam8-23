@@ -15,10 +15,13 @@ public class IntroManager : MonoBehaviour
     [Header("Page Date")]
     [SerializeField] private IntroPage[] pages;
 
+
     [Header("UI")]
     [SerializeField] private Image displayImage;
     [SerializeField] private CanvasGroup imageCanvasGroup;
     [SerializeField] private TypewriterText typewriter;
+    [SerializeField] private CanvasGroup textCanvasGroup;
+    [SerializeField] private float pageFadeDuration = 1f;
 
     [Header("Presentation Settings")]
     [SerializeField] private float fadeDuration = 1.0f;
@@ -74,21 +77,27 @@ public class IntroManager : MonoBehaviour
             }
 
             typewriter.Play(page.text);
-
+            textCanvasGroup.alpha = 1f;
 
             _waitingForClick = true;
             _clicked = false;
             yield return new WaitUntil(() => _clicked);
             _waitingForClick = false;
 
-
             bool sameAsNext = i < pages.Length - 1 && pages[i + 1].image == page.image;
+
             if (!sameAsNext)
             {
+                StartCoroutine(FadeText(1f, 0f));
                 yield return StartCoroutine(Fade(1f, 0f));
             }
-
+            else
+            {
+                yield return StartCoroutine(FadeText(1f, 0f));
+            }
             typewriter.Stop();
+
+
             if (i < pages.Length - 1)
             {
                 yield return new WaitForSeconds(delayBetweenPages);
@@ -96,7 +105,18 @@ public class IntroManager : MonoBehaviour
         }
         OnIntroComplete();
     }
-
+    private IEnumerator FadeText(float from, float to)
+    {
+        float timer = 0f;
+        textCanvasGroup.alpha = from;
+        while (timer < pageFadeDuration)
+        {
+            timer += Time.deltaTime;
+            textCanvasGroup.alpha = Mathf.Lerp(from, to, timer / pageFadeDuration);
+            yield return null;
+        }
+        textCanvasGroup.alpha = to;
+    }
     private IEnumerator Fade(float from, float to)
     {
         float timer = 0f;

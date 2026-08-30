@@ -11,7 +11,10 @@ public class CameraShake : MonoBehaviour
         Instance = this;
         originalPos = transform.localPosition;
     }
-
+    private void Update()
+    {
+        if (MainPause.Instance.IsPaused) return;
+    }
     public void Shake(float duration = 0.2f, float intensity = 0.15f)
     {
         StartCoroutine(ShakeCoroutine(duration, intensity));

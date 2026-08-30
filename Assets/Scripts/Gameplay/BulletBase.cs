@@ -24,6 +24,7 @@ public abstract class BulletBase : MonoBehaviour
 
     void Update()
     {
+        if (MainPause.Instance.IsPaused) return;
         transform.position += Vector3.left * speed * Time.deltaTime;
         float leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero).x;
         if (transform.position.x < leftEdge)
