@@ -15,7 +15,16 @@ public class PauseManager : MonoBehaviour
     public void Resume()
     {
         settingsPanel.SetActive(false);
-        Time.timeScale = 1f;
+
+       
+        if (MainPause.Instance != null && MainPause.Instance.IsPaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
 
         string scene = SceneManager.GetActiveScene().name;
         if (scene == "MainScene" || scene == "BossScene")

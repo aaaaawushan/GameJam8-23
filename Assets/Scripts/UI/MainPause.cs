@@ -16,20 +16,22 @@ public class MainPause : MonoBehaviour
         Instance = this;
     }
 
-
     public void TogglePause()
     {
         IsPaused = !IsPaused;
-
         if (IsPaused)
         {
-           Time.timeScale = 0f;
-            pauseButton.image.sprite = playIcon; 
+            Time.timeScale = 0f;
+            pauseButton.image.sprite = playIcon;
+            AudioManager.Instance.PauseBGM();
+            Cursor.visible = true;
         }
         else
         {
             Time.timeScale = 1f;
-            pauseButton.image.sprite = pauseIcon; 
+            pauseButton.image.sprite = pauseIcon;
+            AudioManager.Instance.ResumeBGM();
+            Cursor.visible = false;
         }
     }
 }

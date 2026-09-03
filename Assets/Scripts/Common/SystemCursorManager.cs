@@ -27,12 +27,21 @@ public class SystemCursorManager : MonoBehaviour
     }
     void Update()
     {
+        Cursor.visible = false;
         if (cursorUI.gameObject.activeSelf)
         {
             cursorUI.position = Mouse.current.position.ReadValue();
         }
     }
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            if (FindAnyObjectByType<CursorManager>() != null) return;
 
+            ShowCustomCursor();
+        }
+    }
 
     public void ShowCustomCursor()
     {
@@ -41,7 +50,7 @@ public class SystemCursorManager : MonoBehaviour
             cursorUI.gameObject.SetActive(true);
         }
      //   Cursor.visible = true;
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+       // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     public void HideCursor()
@@ -50,6 +59,6 @@ public class SystemCursorManager : MonoBehaviour
         {
             cursorUI.gameObject.SetActive(false);
         }
-       // Cursor.visible = false;
+        Cursor.visible = false;
     }
 }

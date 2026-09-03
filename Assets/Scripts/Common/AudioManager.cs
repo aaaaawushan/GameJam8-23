@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     public System.Action OnBGMFinished;
 
     private float bgmBaseVolume = 1f;
-    private float sfxBaseVolume = 1f;
+    private float sfxBaseVolume = 2f;
 
     void Awake()
     {
@@ -39,7 +39,6 @@ public class AudioManager : MonoBehaviour
             sfxSource.playOnAwake = false;
         }
 
-        sfxBaseVolume = sfxSource.volume;
     }
 
     public void PlayBGM(AudioSource source)
@@ -101,6 +100,21 @@ public class AudioManager : MonoBehaviour
         if (sfxSource != null && sfxSource.clip != null)
         {
             sfxSource.PlayOneShot(sfxSource.clip, sfxBaseVolume * masterVolume);
+        }
+    }
+    public void PauseBGM()
+    {
+        if (bgmSource != null && bgmSource.isPlaying)
+        {
+            bgmSource.Pause();
+        }
+    }
+
+    public void ResumeBGM()
+    {
+        if (bgmSource != null && !bgmSource.isPlaying)
+        {
+            bgmSource.UnPause();
         }
     }
 }
