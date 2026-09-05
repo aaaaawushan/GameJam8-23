@@ -8,15 +8,16 @@ public class PauseManager : MonoBehaviour
     public void Pause()
     {
         settingsPanel.SetActive(true);
-        SystemCursorManager.Instance.ShowCustomCursor();
+        var cm = FindAnyObjectByType<CursorManager>();
+      if (cm != null) cm.SetDefaultCursor(true);
         Time.timeScale = 0f;
     }
 
     public void Resume()
     {
         settingsPanel.SetActive(false);
-
-       
+        var cm = FindAnyObjectByType<CursorManager>();
+        if (cm != null) cm.SetDefaultCursor(false);
         if (MainPause.Instance != null && MainPause.Instance.IsPaused)
         {
             Time.timeScale = 0f;
@@ -24,16 +25,6 @@ public class PauseManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
-        }
-
-        string scene = SceneManager.GetActiveScene().name;
-        if (scene == "MainScene" || scene == "BossScene")
-        {
-            SystemCursorManager.Instance.HideCursor();
-        }
-        else
-        {
-            SystemCursorManager.Instance.ShowCustomCursor();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class IntroSkip : MonoBehaviour
 {
     [SerializeField] private GameObject skipButton;
-    private bool hasVisited=false;
+    private static bool hasVisited=false;
 
     private void Start()
     {

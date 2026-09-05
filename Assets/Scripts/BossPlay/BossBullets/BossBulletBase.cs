@@ -59,6 +59,7 @@ public class BossBulletBase : MonoBehaviour
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 OnHit();
+                AudioManager.Instance?.PlayHitSFX();
             }
         }
     }

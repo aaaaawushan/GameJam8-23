@@ -49,6 +49,7 @@ public class IntroManager : MonoBehaviour
         if (typewriter.isTyping)
         {
             typewriter.Skip();
+            return;
         }
         else if (_waitingForClick)
         {
@@ -76,7 +77,7 @@ public class IntroManager : MonoBehaviour
             {
                 yield return StartCoroutine(Fade(0f, 1f));
             }
-
+            Debug.Log(i+"i");
             typewriter.Play(page.text);
             textCanvasGroup.alpha = 1f;
 

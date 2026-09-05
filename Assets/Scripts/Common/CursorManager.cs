@@ -1,71 +1,59 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CursorManager : MonoBehaviour
 {
-    [SerializeField] private RectTransform cursorUI;
-    [SerializeField] private Image cursorImage;
-    [SerializeField] private Sprite defaultSprite;
-    [SerializeField] private Sprite hoverSprite;
-    [SerializeField] private Sprite normalCursorSprite;
+    [SerializeField] private Texture2D defaultSprite;
+    [SerializeField] private Texture2D hoverSprite;
+    [SerializeField] private Texture2D normalCursorSprite;
+    private bool forceDefault = false;
 
-    public static CursorManager Instance { get; private set; }
+    [SerializeField] private Vector2 hotspot = Vector2.zero;
 
-    void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+    void OnEnable()
+    {  Debug.Log($"Cursor size: {defaultSprite.width}x{defaultSprite.height}");
+            Cursor.SetCursor(defaultSprite, hotspot, CursorMode.Auto);
+    
     }
 
-    void Start()
+    public void SetDefaultCursor(bool isDefault)
     {
-        Cursor.visible = false;
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Application.ExternalEval("document.body.style.cursor='none'; var c=document.getElementById('unity-canvas'); if(c) c.style.cursor='none';");
-#endif
+        forceDefault = isDefault;
+        if (isDefault)
+        {
+            Cursor.SetCursor(normalCursorSprite, Vector2.zero, CursorMode.Auto);
+        }
     }
 
     void Update()
     {
-        Cursor.visible = false;
-        cursorUI.position = Mouse.current.position.ReadValue();
 
-        string scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        if (scene == "MainScene" || scene == "BossScene")
+        if (forceDefault) return;
+        Vector2 worldPos = Camera.main.ScreenToWorldPoint(
+            Mouse.current.position.ReadValue());
+        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+        
+        if (hit.collider != null)
         {
-           
-            Vector2 worldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
-            if (hit.collider != null && hit.collider.GetComponent<BulletBase>() != null)
+            Debug.Log("Hit: " + hit.collider.gameObject.name);
+            if (hit.collider.GetComponent<BulletBase>() != null)
             {
-                cursorImage.sprite = hoverSprite;
+                Cursor.SetCursor(hoverSprite, hotspot, CursorMode.Auto);
             }
             else
             {
-                cursorImage.sprite = defaultSprite;
+                Cursor.SetCursor(defaultSprite, hotspot, CursorMode.Auto);
             }
         }
         else
         {
-            
-            cursorImage.sprite = normalCursorSprite;
+            Cursor.SetCursor(defaultSprite, hotspot, CursorMode.Auto);
         }
     }
-
-    void OnApplicationFocus(bool hasFocus)
+    void OnDisable()
     {
-        if (hasFocus)
-        {
-            Cursor.visible = false;
-#if UNITY_WEBGL && !UNITY_EDITOR
-            Application.ExternalEval("document.body.style.cursor='none'; var c=document.getElementById('unity-canvas'); if(c) c.style.cursor='none';");
-#endif
-        }
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }

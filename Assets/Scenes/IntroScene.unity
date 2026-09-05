@@ -251,6 +251,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326335172}
   m_CullTransparentMesh: 1
+--- !u!1 &340197638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 340197640}
+  - component: {fileID: 340197639}
+  m_Layer: 0
+  m_Name: IntroManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &340197639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340197638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff7557cf3681424e833f5969bb7e55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IntroManager
+  pages:
+  - image: {fileID: 6268606746825039309, guid: 852a98c3276004bb7a69f053689c59d1, type: 3}
+    text: The drinks in the fridge are all gone.
+  - image: {fileID: 6782134719153662387, guid: a1ef6930eeb374b1cbe203ccff39d102, type: 3}
+    text: "Drinks are my source of happiness.  \nI really need to stock up."
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
+    text: "I really don\u2019t want to go outside.\r\nBut I have to."
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
+    text: I wish everyone would just disappear.
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
+    text: "I don\u2019t want to see anyone.\r\nI can\u2019t trust anyone.\r\nEvery
+      movement. Every word. Every little gesture.\r\nEverything feels ten times louder
+      than it should."
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
+    text: 'Fat pig.
+
+      Loser.
+
+      Useless.
+
+      A waste of space.
+
+      You
+      stink.
+
+      Disgusting.'
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
+    text: 'When was the last time she showered?
+
+      Lazy ass.
+
+      Ugly freak.'
+  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
+    text: "\nI don\u2019t want to hear those voices anymore.\n"
+  - image: {fileID: -3244613740898623679, guid: 020232432430c4711ba92b97ea0e3247, type: 3}
+    text: '
+
+      The music can help drown out these sounds.
+
+'
+  displayImage: {fileID: 424019544}
+  imageCanvasGroup: {fileID: 424019541}
+  typewriter: {fileID: 2076494324}
+  textCanvasGroup: {fileID: 2076494325}
+  pageFadeDuration: 1.3
+  fadeDuration: 1
+  delayBetweenPages: 0.3
+  gameInstructionTime: 3
+  nextSceneName: InstructionSceneA
+--- !u!4 &340197640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340197638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354581427
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +356,6 @@ GameObject:
   - component: {fileID: 354581430}
   - component: {fileID: 354581429}
   - component: {fileID: 354581428}
-  - component: {fileID: 354581432}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -356,67 +448,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &354581432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354581427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff7557cf3681424e833f5969bb7e55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IntroManager
-  pages:
-  - image: {fileID: 6268606746825039309, guid: 852a98c3276004bb7a69f053689c59d1, type: 3}
-    text: The drinks in the fridge are all gone.
-  - image: {fileID: 6782134719153662387, guid: a1ef6930eeb374b1cbe203ccff39d102, type: 3}
-    text: "Drinks are my source of happiness.  \nI really need to stock up."
-  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
-    text: "I really don\u2019t want to go outside.\r\nBut I have to."
-  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
-    text: I wish everyone would just disappear.
-  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
-    text: "I don\u2019t want to see anyone.\r\nI can\u2019t trust anyone.\r\nEvery
-      movement. Every word. Every little gesture.\r\nEverything feels ten times louder
-      than it should."
-  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
-    text: 'Fat pig.
-
-      Loser.
-
-      Useless.
-
-      A waste of space.
-
-      You
-      stink.
-
-      Disgusting.'
-  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
-    text: 'When was the last time she showered?
-
-      Lazy ass.
-
-      Ugly freak.'
-  - image: {fileID: 4512734835347806423, guid: d1b847614c34843c68d8c72437fafd8d, type: 3}
-    text: "\nI don\u2019t want to hear those voices anymore.\n"
-  - image: {fileID: -3244613740898623679, guid: 020232432430c4711ba92b97ea0e3247, type: 3}
-    text: '
-
-      The music can help drown out these sounds.
-
-'
-  displayImage: {fileID: 424019544}
-  imageCanvasGroup: {fileID: 424019541}
-  typewriter: {fileID: 2076494324}
-  textCanvasGroup: {fileID: 2076494325}
-  pageFadeDuration: 1.3
-  fadeDuration: 1
-  delayBetweenPages: 0.3
-  gameInstructionTime: 3
-  nextSceneName: InstructionSceneA
 --- !u!1 &424019540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,3 +1223,4 @@ SceneRoots:
   - {fileID: 935038934}
   - {fileID: 354581431}
   - {fileID: 2009459172}
+  - {fileID: 340197640}

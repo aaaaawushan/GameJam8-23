@@ -18,7 +18,6 @@ public class MainDamage : DamageBase
    
     void Start()
     {
-        SystemCursorManager.Instance.HideCursor();
         fullHPImage.SetActive(true);
         damagedImage.SetActive(false);
         endPanel.SetActive(false);
@@ -57,7 +56,6 @@ public class MainDamage : DamageBase
 
         color.a = 1f;
         fadeImage.color = color;
-        SystemCursorManager.Instance.ShowCustomCursor();
       endPanel.SetActive(true);
     }
 

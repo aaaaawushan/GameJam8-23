@@ -1092,7 +1092,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: f20046dd665ac44718bb546386297829, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7309,7 +7309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2032009699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7322,10 +7322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987bb117c8e29d749aa5819b89f71e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorManager
-  cursorUI: {fileID: 1407211660}
-  cursorImage: {fileID: 1407211661}
-  defaultSprite: {fileID: 5369283737450569402, guid: 548d6a7f3d9ea9948ad438c9b365a7cd, type: 3}
-  hoverSprite: {fileID: -1624647783852489955, guid: 440433a923349d64292a78d5eb7507bd, type: 3}
+  defaultSprite: {fileID: 2800000, guid: dd2d67c2d72246f4aada345750c45130, type: 3}
+  hoverSprite: {fileID: 2800000, guid: 4d5e35d171917e944a8ad3eefa02cff0, type: 3}
+  normalCursorSprite: {fileID: 2800000, guid: bbf3732c3c0e97a4f868a1309fc4c6a2, type: 3}
+  hotspot: {x: 0, y: 0}
 --- !u!4 &2032009700
 Transform:
   m_ObjectHideFlags: 0
